@@ -9,39 +9,66 @@ const EditDoc = () => {
         const {contract} = contData.state;
         const name = document.querySelector('#name').value;
         
-        const id = document.querySelector('#id').value;
         const gen = document.querySelector('#gender').value;
         const hn = document.querySelector('#hn').value;
         const ph = document.querySelector('#ph').value;
         const qa = document.querySelector('#qa').value;
         const sp = document.querySelector('#sp').value;
         
-        console.log( id, name, gen, sp, hn, ph, qa)
+        
         console.log("Check" +contract)
-        const transaction = await contract.editDoctor(contData.account[0],id, name, gen, sp, hn, ph, qa);
+        const transaction = await contract.editDoctor(1, name, gen, sp, hn, ph, qa);
         await transaction.wait();
         console.log("Doctor Registed")
     }
   return (
     <>
-    {console.log(contData)}
+    <div className='rout'>
     <form onSubmit={display}>
-        <label>Id</label>
-        <input type='number' id='id' ></input>
-        <label>Name</label>
-        <input type='text' id='name' ></input>
-        <label>Gender</label>
+      <div className='inner'>
+        
+        
+        <table>
+        <h2>Update Profile</h2>
+        <hr/>
+          <tc>
+            <tr ><div className="row">
+            <label>Name</label>
+            <input type='text' id='name' ></input>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Gender</label>
         <input type='text' id='gender' ></input>
-        <label>Specialist</label>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Specialist</label>
         <input type='text' id='sp' ></input>
-        <label>Hospital Name</label>
+            </div></tr>
+          </tc>
+
+          <tc>
+            <tr ><div className="row">
+            <label>Hospital Name</label>
         <input type='text' id='hn' ></input>
-        <label>Phone Number</label>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Phone Number</label>
         <input type='text' id='ph' ></input>
-        <label>Qualification</label>
-        <input type='text' id='qa' ></input>
-        <button type='submit'>Submit</button>
-    </form>
+
+            </div></tr>
+            <tr ><div className="row">
+            <label>Qualification</label>
+            <input type='text' id='qa' ></input>
+            </div></tr> 
+                  
+            </tc>
+            <hr/>
+        </table>
+       
+      </div>
+      <button type='submit'>Submit</button>
+      </form>
+    </div>
     </>
   )
 }

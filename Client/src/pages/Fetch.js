@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import React,{useContext} from 'react'
 import { AppContext } from '../context';
+import '../styles/dis.css'
 
 const Fetch = (props)=> {
     const contData = useContext(AppContext);
@@ -26,47 +27,70 @@ const Fetch = (props)=> {
         const gA = await contract.removeAccess(add);
         await gA.wait();
     }
+    const goto = async()=>{
+        window.location.href = "/editpat";
+    }
     console.log(dets);
     return (
-    <><p>Patient Details</p> 
-    <button><a href='/editpat'>Edit Profile</a></button>
-                <table >
+
+    <>
+    <div className='dout'>
+    
+                <table  >
+                <h2>Personal Information<hr/></h2>
                     <tbody>
-                        <tr> 
-                            <td>{dets[1]}</td>
+                    
+                        <tc>
+                        
+                        <tr className = "tr">
+                            <td className = "td">Name : {dets[1]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[2]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Gender : {dets[2]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[3]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Blood Group :{dets[3]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[4]}</td>
+                        <tr className = "tr">
+                            <td className = "td"> Phone Number : {dets[4]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[5]}</td>
+                        
+                        <tr >
+                            <td className = "td">
+                            <p>Give Permission<hr/></p>
+                        <input type='text' id='add'></input>
+                        <button type='submit' onClick={giveAccess}>Give</button>     
+                            </td>
+                        
                         </tr>
-                        <tr> 
-                            <td>{dets[6]}</td>
+                        </tc>
+                        <tc>
+                        <tr className = "tr">
+                            <td className = "td">Address : {dets[5]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[7]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Suffered Disease : {dets[6]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[8]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Medicine : {dets[7]}<hr/></td>
                         </tr>
+                        <tr className = "tr">
+                            <td className = "td"> DOB : {dets[8]}<hr/></td>
+                        </tr>
+                        <tr >
+                            <td className = "td">
+                            <p>Revoke Permission<hr/></p>
+                        <input type='text' id='add'></input>
+                        <button type='submit' onClick={removeAccess}>Remove</button>
+                            </td>
+                        
+                        </tr>
+                        </tc>
+                        
                     </tbody>
                 </table>
-        <p>Give Permission</p>
-        <label>Address</label>
-        <input type='text' id='add'></input>
-        <button type='submit' onClick={giveAccess}>Give</button>
-        <p>remove Permission</p>
-        <label>Address</label>
-        <input type='text' id='add'></input>
-        <button type='submit' onClick={removeAccess}>Remove</button>
-        
+                <button onClick={goto}>Edit Profile</button>
+        </div>
     </>
   )
 }

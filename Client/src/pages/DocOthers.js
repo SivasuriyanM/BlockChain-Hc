@@ -12,7 +12,7 @@ const DocOthers = () => {
         const detail = async () => {
             const da = await contract.getDoctorAccounts();
             setDa(da);
-            const dn = await contract.getDoctorAccounts();
+            const dn = await contract.getDoctorName();
             setDn(dn)
         };
         contract && detail();
@@ -27,39 +27,41 @@ const DocOthers = () => {
     }
   return (
     <>
+    <h4>Enter Doctor Address</h4>
     <form onSubmit={display}>
-    <label>Doctor Address</label>
-    <input type='text' id='address' ></input>
-    <button type='submit'>Submit</button>
-    </form>
-<h6>{dn[0]} - {da[0]}</h6>
-        <p>Doctor Details</p> 
-                <table >
+    <input className = "tds" type='text' id='address' ></input>
+    <button type='submit'>Search</button>
+    </form>                    
+    <h3>Doctor List</h3>
+    <h3>{dn[0]} - {da[0]}</h3>
+        <table >
+       
+                    <h2>Doctor Details<hr/></h2>
                     <tbody>
+                    
+                        <tc>
                         <tr> 
-                            <td>{dets[1]}</td>
+                            <td className = "td">Name : {dets[1]}<hr/></td>
                         </tr>
                         <tr> 
-                            <td>{dets[2]}</td>
+                            <td className = "td">Gender : {dets[2]}<hr/></td>
                         </tr>
                         <tr> 
-                            <td>{dets[3]}</td>
+                            <td className = "td">Specialization : {dets[3]}<hr/></td>
+                        </tr>
+                        </tc>
+                        <tc>
+                        <tr> 
+                            <td className = "td">Phone Number : {dets[4]}<hr/></td>
+                        </tr>
+                        
+                        <tr> 
+                            <td className = "td">Hospital Name : {dets[5]}<hr/></td>
                         </tr>
                         <tr> 
-                            <td>{dets[4]}</td>
+                            <td className = "td">Qualification : {dets[6]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[5]}</td>
-                        </tr>
-                        <tr> 
-                            <td>{dets[6]}</td>
-                        </tr>
-                        <tr> 
-                            <td>{dets[7]}</td>
-                        </tr>
-                        <tr> 
-                            <td>{dets[8]}</td>
-                        </tr>
+                        </tc>
                     </tbody>
                 </table>
     </>

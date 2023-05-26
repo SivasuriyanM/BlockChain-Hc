@@ -35,99 +35,116 @@ const FetchOthers = (props) => {
     
   return (
     <> 
+    <h3>Search Patient</h3>
     <form onSubmit={display}>
-    <label>Patient Address</label>
-    <input type='text' id='address' ></input>
+    <input className = "tds" type='text' id='address' ></input>
     <button type='submit'>Submit</button>
     </form>
 <h6>{pn[0]} - {pa[0]}</h6>
 <h6>{pn[1]} - {pa[1]}</h6>
-        <p>Patient Details</p> 
-                <table >
+<table  >
+                <h2>Personal Information<hr/></h2>
                     <tbody>
-                        <tr> 
-                            <td>{dets[1]}</td>
+                    
+                        <tc>
+                        
+                        <tr className = "tr">
+                            <td className = "td">Name : {dets[1]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[2]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Gender : {dets[2]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[3]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Blood Group :{dets[3]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[4]}</td>
+                        <tr className = "tr">
+                            <td className = "td"> Phone Number : {dets[4]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[5]}</td>
+                        </tc>
+                        <tc>
+                        <tr className = "tr">
+                            <td className = "td">Address : {dets[5]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[6]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Suffered Disease : {dets[6]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[7]}</td>
+                        <tr className = "tr">
+                            <td className = "td">Medicine : {dets[7]}<hr/></td>
                         </tr>
-                        <tr> 
-                            <td>{dets[8]}</td>
+                        <tr className = "tr">
+                            <td className = "td"> DOB : {dets[8]}<hr/></td>
                         </tr>
+                        </tc>
+                        
                     </tbody>
                 </table>
-        <p>Diabetes Report</p>
-                    <table >
-                        <tbody>
-                            <tr>
-                                <td>{dia[0]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[1]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[2]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[3]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[4]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[5]}</td>
-                            </tr>
-                                <tr>
-                                <td>{dia[6]}</td>
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-        <p>Heartdisease Report</p>
-                    <table >
-                        <tbody>
-                            <tr>  
-                                <td>{hd[0]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[1]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[2]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[3]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[4]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[5]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[6]}</td>
-                            </tr>
-                            <tr>
-                                <td>{hd[7]}</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table> 
+                <div className='dout'>
+        <table  >
+    <h2>Diabetes Report<hr/></h2>
+        <tbody>        
+            <tc>            
+            <tr className = "tr">
+                <td className = "tdd">Glucose Level : {dia[0]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Blood Pressure : {dia[1]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Skin Thickness :{dia[2]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd"> Insulin : {dia[3]}<hr/></td>
+            </tr>
+            </tc>
+            <tc>
+            <tr className = "tr">
+                <td className = "tdd">Body Mass Index : {dia[4]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Pregnancies : {dia[5]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Diabetes Pedigree Function : {dia[6]}<hr/></td>
+            </tr>
+            </tc>
+            
+        </tbody>
+    </table>
+        
+        <table  >
+    <h2>Heartdisease Report<hr/></h2>
+        <tbody>        
+            <tc>            
+            <tr className = "tr">
+                <td className = "tdd">Chest-pain type : {hd[0]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Resting Blood Pressure : {hd[1]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Max heart rate achieved : {hd[2]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Serum Cholestrol : {hd[3]}<hr/></td>
+            </tr>
+            </tc>
+            <tc>
+            <tr className = "tr">
+                <td className = "tdd">Fasting Blood Sugar : {hd[4]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Resting ECG : {hd[5]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Exercise induced angina : {hd[6]}<hr/></td>
+            </tr>
+            <tr className = "tr">
+                <td className = "tdd">Thalassemia : {hd[7]}<hr/></td>
+            </tr>
+            </tc>            
+        </tbody>
+    </table>
+    </div>
     </>
   )
 }

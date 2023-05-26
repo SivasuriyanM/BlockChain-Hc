@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import React,{useContext} from 'react'
 import { AppContext } from '../context';
+import '../styles/dis.css'
 
 const FetchDoc = () => {
     const contData = useContext(AppContext);
@@ -14,45 +15,45 @@ const FetchDoc = () => {
     contract && detail();
 
   });
-    // const giveAccess = async(event) => {
-    //     event.preventDefault();
-    //     const add = document.querySelector('#add').value;
-    //     const gA = await contract.giveAccess(add);
-    //     await gA.wait();
-    // }
-    // const removeAccess = async(event) => {
-    //     event.preventDefault();
-    //     const add = document.querySelector('#add').value;
-    //     const gA = await contract.removeAccess(add);
-    //     await gA.wait();
-    // }
+  const goto = async()=>{
+    window.location.href = "/editdoc";
+    }
+
     console.log(dets);
     return (
-    <><p>Doctor Details</p> 
-    <button><a href='/editdoc'>Edit Profile</a></button>
+    <>
+    <div className='dout'>
+    
                 <table >
+                    <h2>Personal Information<hr/></h2>
                     <tbody>
+                        <tc>
                         <tr> 
-                            <td>{dets[1]}</td>
+                            <td className = "td">Name : {dets[1]}<hr/></td>
                         </tr>
                         <tr> 
-                            <td>{dets[2]}</td>
+                            <td className = "td">Gender : {dets[2]}<hr/></td>
                         </tr>
                         <tr> 
-                            <td>{dets[3]}</td>
+                            <td className = "td">Specialization : {dets[3]}<hr/></td>
                         </tr>
+                        </tc>
+                        <tc>
                         <tr> 
-                            <td>{dets[4]}</td>
-                        </tr>
-                        <tr> 
-                            <td>{dets[5]}</td>
-                        </tr>
-                        <tr> 
-                            <td>{dets[6]}</td>
+                            <td className = "td">Phone Number : {dets[4]}<hr/></td>
                         </tr>
                         
+                        <tr> 
+                            <td className = "td">Hospital Name : {dets[5]}<hr/></td>
+                        </tr>
+                        <tr> 
+                            <td className = "td">Qualification : {dets[6]}<hr/></td>
+                        </tr>
+                        </tc>
                     </tbody>
                 </table>
+                <button onClick={goto}>Edit Info</button>
+        </div>
     </>
   )
 }

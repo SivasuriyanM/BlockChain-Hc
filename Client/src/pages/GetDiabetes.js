@@ -1,6 +1,7 @@
 import React,{useContext} from 'react';
 import { AppContext } from '../context';
 
+
  const GetDiabetes = (props) => {
     const contData = useContext(AppContext);
     
@@ -21,24 +22,60 @@ import { AppContext } from '../context';
     }
   return (
     <>
-    {console.log(contData)}
+    
+    <div className='rout'>
     <form onSubmit={display}>
-        <label>Glucose Level</label>
-        <input type='text' id='gl' ></input>
-        <label>Blood Pressure</label>
-        <input type='text' id='bp' ></input>
-        <label>Skin Thickness</label>
-        <input type='text' id='st' ></input>
-        <label>Insulin</label>
-        <input type='text' id='in' ></input>
-        <label>Body Mass Index</label>
-        <input type='text' id='bmi' ></input>
-        <label>Pregnancies</label>
-        <input type='text' id='pre' ></input>
-        <label>Diabetes Pedigree Function</label>
-        <input type='text' id='dpf' ></input>
-        <button type='submit'>Submit</button>
-    </form>
+      <div className='inner'>
+        
+        
+        <table>
+        <h2>Record Entry</h2>
+        <hr/>
+          <tc>
+            <tr ><div className="row">
+            <label>Glucose Level</label>
+            <input type='number' id='gl' ></input>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Blood Pressure</label>
+            <input type='text' id='bp' ></input>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Skin Thickness</label>
+          <input type='text' id='st' ></input>
+            </div></tr>
+            <tr ><div className="row">
+            <label>Insulin</label>
+          <input type='text' id='in' ></input>
+            </div></tr>         
+          </tc>
+
+          <tc>
+            <tr ><div className="row">
+            <label>Body Mass Index</label>
+          <input type='text' id='bmi' ></input>
+
+            </div></tr>
+            <tr ><div className="row">
+            <label>Pregnancies</label>
+          <input type='text' id='pre' ></input>
+
+            </div></tr>
+            <tr ><div className="row">
+            <label>Diabetes Pedigree Function</label>
+          <input type='text' id='dpf' ></input>
+
+            </div></tr>
+            <tr ><div className="row">
+            <button type='submit'>Submit</button>
+            </div></tr>          
+            </tc>
+        </table>
+      </div>
+      </form>
+    </div>
+    
+ 
     </>
   )
 }

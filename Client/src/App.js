@@ -38,7 +38,7 @@ function App(){
     const [account, setAccount] = useState("None");
     useEffect(() =>{
       const connectWallet = async()=>{
-        const contractAddress = '0xDf31B7Ea8E0c86A5614Fd5369eBcE04b366e0ae1';
+        const contractAddress = '0x6006A04ABa557C552A5cA2A19f53a5A5bDaFC415';
         const contractAbi = abi.abi;
         try{
           const {ethereum} = window;
@@ -85,7 +85,7 @@ function App(){
           <Route path='/login' exact Component={Login}/>
           <Route path='/patlog' exact Component={PatLog}/>
           <Route path='/doclog' exact Component={Doclog}/>
-          <Route path='/sigin' exact Component={Sigin}/>
+          <Route path='/sign' exact Component={Sigin}/>
           <Route path='/patient' exact Component={Patient}/>
           <Route path='/doctor' exact Component={Doctor}/>
           <Route path='/regpat' exact Component={Detail}/>
