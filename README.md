@@ -120,7 +120,7 @@ This project is open-source and available under the [MIT License](LICENSE).
 If you have any questions or suggestions, feel free to reach out.
 
 - **Email:** msivasuriyanmohan692@gmail.com 
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/siva-suriyan-m/)
+- **LinkedIn:** [Sivasuriyan Mohan](https://www.linkedin.com/in/siva-suriyan-m/)
 
 
 ---
